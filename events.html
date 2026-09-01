@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(163, 13, 13);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            border: 2px solid black;
+
+        }
+        #container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+        </style>
+</head>
+<body>
+    <div id="container">
+    <div id="para" onmouseover="eventcall()"> 1 this is events page</div>
+    <div id="box" oncontextmenu="eventcall()">2 this is events page</div>
+    <div id="box" onclick="eventcall()">3 this is events page</div>
+    <div id="box" ondblclick="eventcall()">4 this is events page</div>
+    <div id="box" onmousedown="eventcall1()">5 this is events page</div>
+    <div id="box" onmouseup="eventcall1()">6 this is events page</div>
+    </div>
+    <script>
+        function eventcall() {
+            alert('these are mouse events!');
+        }
+        function eventcall1() {
+            alert('these are keyboard events!');
+        }
+
+    </script>
+    
+</body>
+</html>

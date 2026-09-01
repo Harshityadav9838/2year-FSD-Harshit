@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN </title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #c5c2c2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .card {
+        background-color: #fffefe;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 3px 7px rgba(6, 1, 1, 0.1);
+    }
+    .card-header {
+        margin-bottom: 20px;
+    }
+    .card-header h2 {
+        margin: 0;
+    }
+</style>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <center>
+                <h2>Login</h2>
+            </center>
+        </div>
+        <div class="card-body">
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                forgot password? <a href="#">Click here</a>
+                <br><br>
+                <center>
+                    <a href="registration.html">Don't have an account? Register</a>
+                </center>
+                <center>
+                <input type="submit" value="Login">
+                </center>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

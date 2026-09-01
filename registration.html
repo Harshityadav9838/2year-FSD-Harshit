@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT INFORMATION</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #c5c2c2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .card {
+        background-color: #fffefe;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 3px 7px rgba(6, 1, 1, 0.1);
+    }
+    .card-header {
+    
+        margin-bottom: 20px;
+    }
+    .card-header h2 {
+        margin: 0;
+    }
+</style>
+<body>
+   
+        <div class="card">
+            <div class="card-header">
+                <center>
+                    <h2>Register</h2>
+                </center>
+            </div>
+            <div class="card-body">
+                <center>
+                    
+               
+                <form>
+                    <label for="studentName">Name:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                    <br><br>
+                    <label for="studentEmail">Email:</label>
+                    <input type="email" id="studentEmail" name="studentEmail" required>
+                    <br><br>
+                    <label for="studentPhone">Phone:</label>
+                    <input type="tel" id="studentPhone" name="studentPhone" required>
+                    <br><br>
+                    <label for="studentBranch">Branch:</label>
+                    <input type="tel" id="studentBranch" name="studentBranch" required>
+                    <br><br>
+                    <label for="studentYear">Year:</label>
+                    <input type="tel" id="studentYear" name="studentYear" required>
+                    <br><br>
+                    <label for="studentgender">Gender:</label>
+                    <input type="radio" id="studentgender" name="studentgender" value="male" required>
+                    <label for="studentgender">Male</label>
+                    <input type="radio" id="studentgender" name="studentgender" value="female" required>
+                    <label for="studentgender">Female</label>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>
+                </center>
+            </div>
+        </div>
+    
+
+
+    
+</body>
+</html>
