@@ -11,6 +11,6 @@ myEmitter.on('exit', (name) => {
 });
 
 // Emit the 'greet' event with a name
-myEmitter.emit('greet', 'Alice');
+myEmitter.emit('greet', 'harshit');
 // Emit the 'exit' event
-myEmitter.emit('exit', 'Alice');
+myEmitter.emit('exit', 'harshit');
