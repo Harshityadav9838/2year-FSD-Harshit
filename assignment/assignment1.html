@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="stylesheet" type="text/css" href="assignment1.css">
+</head>
+<body>
+    <script src="assignment.js"></script>
+    <center><h1>Quiz</h1></center>
+   <form name="quizForm" onsubmit="return validateForm()" method="post" action="quiz.html">
+        <center><h2>Student Details</h2></center>
+        <center>
+        <h2>Name</h2>
+        <input type="text" name="name" required placeholder="Enter your name">
+        <h2>Roll Number</h2>
+        <input type="text" name="roll" required placeholder="Enter your roll number">
+        <h2>Section</h2>
+        <input type="radio" name="section" value="A" required> A
+        <input type="radio" name="section" value="B" required> B
+        <input type="radio" name="section" value="C" required> C
+       
+    </center>
+    <center>
+    <button type="submit">Submit</button>
+   
+    </center>
+    </form>
+</body>
+</html>
