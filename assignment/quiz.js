@@ -35,8 +35,11 @@ var questions = [
 
 
 var currentQuestion = 0;
+var timeLeft = 60;
+var timer;
 
 
+// Show question
 function showQuestion() {
 
     var question = questions[currentQuestion];
@@ -57,19 +60,75 @@ function showQuestion() {
     }
 
     document.getElementById("quiz-container").innerHTML = html;
+
+    // Start fresh timer for this question
+    startTimer();
 }
 
 
-function nextQuestion() {
+// Timer
+function startTimer() {
 
-    var selected = document.querySelector(
-        'input[name="answer"]:checked'
-    );
+    // Stop previous timer
+    clearInterval(timer);
 
-    if (!selected) {
-        alert("Please select an answer");
-        return;
+    // Reset to 60 seconds
+    timeLeft = 60;
+
+    updateTimer();
+
+    timer = setInterval(function () {
+
+        timeLeft--;
+
+        updateTimer();
+
+        if (timeLeft <= 0) {
+
+            clearInterval(timer);
+
+            alert("Time's up!");
+
+            // Automatically go to next question
+            nextQuestion(true);
+        }
+
+    }, 1000);
+}
+
+
+// Display timer
+function updateTimer() {
+
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+
+    document.getElementById("timer").innerText =
+        "Time Left: " +
+        minutes + ":" +
+        (seconds < 10 ? "0" : "") +
+        seconds;
+}
+
+
+// Next question
+function nextQuestion(timeUp = false) {
+
+    // If time is not up, check answer
+    if (!timeUp) {
+
+        var selected = document.querySelector(
+            'input[name="answer"]:checked'
+        );
+
+        if (!selected) {
+            alert("Please select an answer");
+            return;
+        }
     }
+
+    // Stop current timer
+    clearInterval(timer);
 
     currentQuestion++;
 
@@ -83,8 +142,11 @@ function nextQuestion() {
             "<h2>Quiz Completed!</h2>";
 
         document.getElementById("nextBtn").style.display = "none";
+
+        document.getElementById("timer").style.display = "none";
     }
 }
 
 
+// Start first question
 showQuestion();

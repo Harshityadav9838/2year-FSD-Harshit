@@ -27,3 +27,9 @@
             cursor: pointer;
             margin-top: 20px;
         }
+         #timer {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+}
