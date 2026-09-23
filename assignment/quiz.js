@@ -53,16 +53,56 @@ function showQuestion() {
     for (var i = 0; i < question.options.length; i++) {
 
         html += `
-            <input type="radio" name="answer" value="${i}">
-            ${question.options[i]}
-            <br><br>
+            <div class="option" id="option-${i}">
+                <input 
+                    type="radio" 
+                    name="answer" 
+                    value="${i}"
+                    onchange="checkAnswer(${i})"
+                >
+                <span>${question.options[i]}</span>
+                <span class="result" id="result-${i}"></span>
+            </div>
         `;
     }
 
     document.getElementById("quiz-container").innerHTML = html;
 
-    // Start fresh timer for this question
     startTimer();
+}
+function checkAnswer(selectedAnswer) {
+
+    var question = questions[currentQuestion];
+
+    for (var i = 0; i < question.options.length; i++) {
+
+        var option = document.getElementById("option-" + i);
+        var result = document.getElementById("result-" + i);
+
+        if (i === question.answer) {
+
+            option.style.color = "green";
+            result.innerHTML = " ✓ Correct";
+
+        } else {
+
+            option.style.color = "red";
+            result.innerHTML = " ✕";
+
+        }
+    }
+
+    // Disable all options after selecting
+    var options = document.querySelectorAll(
+        'input[name="answer"]'
+    );
+
+    options.forEach(function(option) {
+        option.disabled = true;
+    });
+
+    // Stop timer after answering
+    clearInterval(timer);
 }
 
 

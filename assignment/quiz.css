@@ -33,3 +33,12 @@
     text-align: center;
     margin: 20px;
 }
+.option {
+    margin: 15px;
+    font-size: 18px;
+}
+
+.result {
+    font-weight: bold;
+    margin-left: 10px;
+}
